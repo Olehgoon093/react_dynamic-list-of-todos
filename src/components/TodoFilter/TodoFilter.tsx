@@ -2,7 +2,7 @@ import { TodoStatus } from '../../TodoStatus';
 
 type Props = {
   onSelectStatus: (status: TodoStatus) => void;
-  selectedStatus: string;
+  selectedStatus: TodoStatus;
   searchValue: string;
   onSearchValueChange: (searchValue: string) => void;
   onSearchValueClear: () => void;
@@ -22,9 +22,9 @@ export const TodoFilter = ({
           onChange={event => onSelectStatus(event.target.value as TodoStatus)}
           value={selectedStatus}
         >
-          <option value="all">All</option>
-          <option value="active">Active</option>
-          <option value="completed">Completed</option>
+          <option value={TodoStatus.ALL}>All</option>
+          <option value={TodoStatus.ACTIVE}>Active</option>
+          <option value={TodoStatus.COMPLETED}>Completed</option>
         </select>
       </span>
     </p>
